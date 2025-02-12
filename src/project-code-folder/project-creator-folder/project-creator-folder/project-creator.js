@@ -1,4 +1,4 @@
-import { projectDisplayArray } from "../..";
+import { projectDisplayArray } from "../../..";
 
 export {createAndAppendProject}
 

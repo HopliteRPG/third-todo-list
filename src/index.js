@@ -1,5 +1,5 @@
 import "./styles.css";
-import { createAndAppendProject } from "./project-code-folder/project-creator-folder/project-creator";
+import { createAndAppendProject } from "./project-code-folder/project-creator-folder/project-creator-folder/project-creator";
 export {projectDisplayArray};
 let projectDisplayArray = [];
 
