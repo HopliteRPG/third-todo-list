@@ -6,6 +6,51 @@
     <title>Todo List</title>
 </head>
 <body>
+    <div id="content">
+        <dialog class="projectDialog">
+            <form class="projectForm">
+                <div class="form-div">
+                    <div class="form-project-h1-div">
+                        <label id="project_h1">Enter the name of the project</label>
+                        <input class="project_h1_input" name="project_h1" type="text" maxlength = 15 required>
+                    </div>
+                    <div class="form-project-p-div">
+                        <label id="project_p">Enter a description</label>
+                        <input type="text" name="project_p" maxlength = 30 required>
+                    </div>
+                    <button class="submit-btn" type="submit">Submit</button>
+                    <button class="close-btn">Close</button>
+                </div>
+            </form>
+        </dialog>
+
+        <dialog class="todoDialog">
+            <form class="todoForm">
+                <div class="form-div">
+                    <div class="form-todo-h1-div">
+                        <label id="todo_h1">Enter the name of the todo</label>
+                        <input class="todo_h1_input" name="todo_h1" type="text" maxlength = 15 required>
+                    </div>
+                    <button class="todo-submit-btn" type="submit">Submit</button>
+                    <button class="todo-close-btn">Close</button>
+                </div>
+            </form>
+        </dialog>
+        <div class="ProjectDiv">
+            <div class="buttonContentProjectDiv">
+
+            </div>
+            <div class="contentProjectDiv">
+
+            </div>
+           
+        </div>
+
+        <div class="TodoDiv">
+            <div class="buttonContentTodoDiv"></div>
+            <div class="contentTodoDiv"></div>
+        </div>
+    </div>
    
 </body>
 </html> 
