@@ -1,10 +1,4 @@
-//Creating Todo
-function createTodo(id,description){
-    let todoId = id;
-    let todoDescription = description; 
-    let checkedStatus = false;
-    return {todoId,todoDescription,checkedStatus}
-}
+export {createAndAppendTodo}
 
 //Find the index of the projects id 
 function findIndex(array,pId){
@@ -16,13 +10,30 @@ function findIndex(array,pId){
     return selectedIndex
 }
 
-//Appending Todo To Array
+//Creating Todo
+function createTodo(description){
+    let todoId = undefined;
+    let todoDescription = description; 
+    let checkedStatus = false;
+    return {todoId,todoDescription,checkedStatus}
+}
+
+//appends the todo Id and updates the todoIdCounter for the selected project
+function appendTodoIdAndUpdateTodoIdCounter(array,projectId,todo){
+    let projectIndex = findIndex(array,projectId)
+    todo.todoId = array[projectIndex].todoIdCounter;
+    array[projectIndex].todoIdCounter++
+  }
+
+  //Appending Todo To Array
 function appendTodoToArray(array,projectId,todo){
     let projectIndex = findIndex(array,projectId)
     array[projectIndex].todoArray.push(todo)
 }
 
-//Wrapper function that both creates and appends the todo to the selected projects todoArray
-// function createAndAppendProject(){
-
-// }
+// Wrapper function that both creates and appends the todo to the selected projects todoArray
+function createAndAppendTodo(description,array,projectId){
+    let tempTodo = createTodo(description);
+    appendTodoIdAndUpdateTodoIdCounter(array,projectId,tempTodo);
+    appendTodoToArray(array,projectId,tempTodo);
+}
