@@ -1,8 +1,18 @@
 import { projectDisplayArray } from "../../..";
 
-export {createAndAppendProject}
+export {createAndAppendProject,deleteProject}
 
 let projectIdCount = 0;
+
+//Find the index of the projects id 
+function findIndex(array,pId){
+    function getUniqueId(object) { 
+        return object.projectId === pId;
+      }
+    
+    const selectedIndex = array.findIndex(getUniqueId);
+    return selectedIndex
+}
 
 //Creating Project
     function createProject(h1Text,pText){
@@ -32,4 +42,11 @@ let projectIdCount = 0;
         setAndIncreaseProjectIdCount(tempProject);
         appendProjectToArray(tempProject,projectDisplayArray);
         console.log(projectDisplayArray);
+    }
+
+//Deleting Project
+    function deleteProject(projectDisplayArray,id){
+        let projectIndex = findIndex(projectDisplayArray,id);
+        projectDisplayArray.splice(projectIndex,1);
+        console.log(projectDisplayArray)
     }
