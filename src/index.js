@@ -1,6 +1,6 @@
 import "./styles.css";
 import { createAndAppendProject,deleteProject } from "./project-code-folder/project-creator-folder/project-creator-folder/project-creator";
-import { createAndAppendTodo } from "./todo-code-folder/todo-creator-folder/todo-creator";
+import { createAndAppendTodo,deleteTodo } from "./todo-code-folder/todo-creator-folder/todo-creator";
 export {projectDisplayArray};
 let projectDisplayArray = [];
 
@@ -17,3 +17,6 @@ createAndAppendTodo("project 1 todo 1",projectDisplayArray,1)
 
 //Deleting project 1
 deleteProject(projectDisplayArray,1)
+
+//Deleting project 0 todo 0
+deleteTodo(projectDisplayArray,0,0)

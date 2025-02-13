@@ -1,4 +1,4 @@
-export {createAndAppendTodo}
+export {createAndAppendTodo,deleteTodo}
 
 //Find the index of the projects id 
 function findIndex(array,pId){
@@ -40,3 +40,10 @@ function findIndex(array,pId){
         appendTodoToArray(array,projectId,tempTodo);
     }
 
+//Deleting Todo
+function deleteTodo(projectDisplayArray,projectId,todoId){
+    let projectIndex = findIndex(projectDisplayArray,projectId);
+    let todoIndex = findIndex(projectDisplayArray,todoId);
+    projectDisplayArray[projectIndex].todoArray.splice(todoIndex,1);
+    console.log(projectDisplayArray)
+}
