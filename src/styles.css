@@ -1,0 +1,24 @@
+/* content html styling */
+#content{
+    display: grid;
+    grid-template: 1fr/ 1fr 5fr;
+}
+
+/* project html styling */
+.projectDiv{
+    border: black 1px solid;
+    cursor: pointer;
+}
+
+.projectH1{
+    padding: 21px 0px 21px 0px;
+}
+
+.projectP{
+    padding: 16px 0px 16px 0px;
+
+}
+
+.projectH1,.projectP{
+    margin: 0;
+}
