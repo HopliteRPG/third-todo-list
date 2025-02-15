@@ -31,10 +31,10 @@ function createH1(div,h1,text,className){
   div.appendChild(cloneH1Create);
 }
 
-function createButton(div,button){
+function createButton(div,button,buttonText,buttonClass){
   let cloneButtonCreate = button.cloneNode(true);
-  cloneButtonCreate.innerText = "Delete";
-  cloneButtonCreate.classList.add("deleteProjectButton");
+  cloneButtonCreate.innerText = buttonText;
+  cloneButtonCreate.classList.add(buttonClass);
   div.appendChild(cloneButtonCreate);
   return{cloneButtonCreate}
 }
@@ -52,13 +52,15 @@ function clearProjectDivHolder(){
 
   const renderProjectsInArray = (array) =>{
     clearProjectDivHolder()
+    let addProjectButton = createButton(buttonContentProjectDiv,buttonCreate,"Add Project","addProjectButton");
+
     array.forEach(project => {
         let projectDiv = createDivSection(contentProjectDiv,divCreate,"projectDiv");
         createH1(projectDiv.cloneDivCreate,h1Create,project.h1TextObj,"projectH1")
         createP(projectDiv.cloneDivCreate,pCreate,project.pTextObj,"projectP");
 
         let deleteDiv = createDivSection(projectDiv.cloneDivCreate,divCreate,"deleteDiv");
-        let deleteButton = createButton(deleteDiv.cloneDivCreate,buttonCreate);
+        let deleteButton = createButton(deleteDiv.cloneDivCreate,buttonCreate,"Delete","deleteProjectButton");
 
         const projectId = project.projectId;
 
@@ -72,6 +74,6 @@ function clearProjectDivHolder(){
 
           deleteProject(projectDisplayArray,projectDisplayArray.findIndex(getUniqueId))
           renderProjectsInArray(projectDisplayArray)
-        })
+        });
     });
   }
