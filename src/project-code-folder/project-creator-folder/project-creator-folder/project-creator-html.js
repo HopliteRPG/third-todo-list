@@ -44,8 +44,14 @@ function setProjectHTMLID(project,id){
 
 }
 
+function clearProjectDivHolder(){
+  buttonContentProjectDiv.innerText = ""
+  contentProjectDiv.innerText = ""
+}
+
 
   const renderProjectsInArray = (array) =>{
+    clearProjectDivHolder()
     array.forEach(project => {
         let projectDiv = createDivSection(contentProjectDiv,divCreate,"projectDiv");
         createH1(projectDiv.cloneDivCreate,h1Create,project.h1TextObj,"projectH1")
@@ -65,6 +71,7 @@ function setProjectHTMLID(project,id){
           }
 
           deleteProject(projectDisplayArray,projectDisplayArray.findIndex(getUniqueId))
+          renderProjectsInArray(projectDisplayArray)
         })
     });
   }
