@@ -1,3 +1,6 @@
+import { projectDisplayArray } from "../../..";
+import { deleteProject } from "./project-creator";
+
 export{renderProjectsInArray}
   //Declaring HTML Variables
   const divCreate = document.createElement("div");
@@ -51,10 +54,17 @@ function setProjectHTMLID(project,id){
         let deleteDiv = createDivSection(projectDiv.cloneDivCreate,divCreate,"deleteDiv");
         let deleteButton = createButton(deleteDiv.cloneDivCreate,buttonCreate);
 
+        const projectId = project.projectId;
+
 
 
         deleteButton.cloneButtonCreate.addEventListener("click", ()=>{
-            console.log(project.projectId)
+
+          function getUniqueId(project) { 
+            return  project.projectId == projectId;
+          }
+
+          deleteProject(projectDisplayArray,projectDisplayArray.findIndex(getUniqueId))
         })
     });
   }

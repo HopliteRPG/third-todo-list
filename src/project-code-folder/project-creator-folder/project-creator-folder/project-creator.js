@@ -46,7 +46,6 @@ function findIndex(array,pId){
 
 //Deleting Project
     function deleteProject(projectDisplayArray,id){
-        let projectIndex = findIndex(projectDisplayArray,id);
-        projectDisplayArray.splice(projectIndex,1);
+        projectDisplayArray.splice(id,1);
         console.log(projectDisplayArray)
     }
