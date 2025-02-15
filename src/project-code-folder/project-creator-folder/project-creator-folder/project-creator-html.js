@@ -1,5 +1,6 @@
 import { projectDisplayArray } from "../../..";
 import { deleteProject } from "./project-creator";
+import { projectFormLogic } from "../../project-form-folder/project-form";
 
 export{renderProjectsInArray}
   //Declaring HTML Variables
@@ -52,8 +53,8 @@ function clearProjectDivHolder(){
 
   const renderProjectsInArray = (array) =>{
     clearProjectDivHolder()
-    let addProjectButton = createButton(buttonContentProjectDiv,buttonCreate,"Add Project","addProjectButton");
-
+    createButton(buttonContentProjectDiv,buttonCreate,"Add Project","addProjectButton");
+    projectFormLogic()
     array.forEach(project => {
         let projectDiv = createDivSection(contentProjectDiv,divCreate,"projectDiv");
         createH1(projectDiv.cloneDivCreate,h1Create,project.h1TextObj,"projectH1")

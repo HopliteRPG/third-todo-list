@@ -1,3 +1,8 @@
+import { projectDisplayArray } from "../..";
+import { createAndAppendProject } from "../project-creator-folder/project-creator-folder/project-creator";
+import { renderProjectsInArray } from "../project-creator-folder/project-creator-folder/project-creator-html";
+
+export {projectFormLogic}
 function projectFormLogic(){
     const contentProjectDiv = document.querySelector(".contentProjectDiv");
     //Dialong and Modal Code 
@@ -14,8 +19,16 @@ function projectFormLogic(){
     
     form.addEventListener("submit",(event) => {
       event.preventDefault();
+      console.log("Form submitted");
       const formData = new FormData(form);
-      projectSubmitFunc(formData.get("project_h1"),formData.get("project_p"));
+      const h1Text = formData.get("project_h1");
+      const pText = formData.get("project_p");
+  
+      if(h1Text && pText){
+        createAndAppendProject(formData.get("project_h1"),formData.get("project_p"),projectDisplayArray)
+        renderProjectsInArray(projectDisplayArray)
+      }
+
       form.reset();
       dialog.close();
 
