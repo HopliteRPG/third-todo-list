@@ -57,8 +57,9 @@ function clearProjectDivHolder(){
     projectFormLogic()
     array.forEach(project => {
         let projectDiv = createDivSection(contentProjectDiv,divCreate,"projectDiv");
-        createH1(projectDiv.cloneDivCreate,h1Create,project.h1TextObj,"projectH1")
-        createP(projectDiv.cloneDivCreate,pCreate,project.pTextObj,"projectP");
+        let projectDivContentHolder = createDivSection(projectDiv.cloneDivCreate,divCreate,"projectDivContentHolder")
+        createH1(projectDivContentHolder.cloneDivCreate,h1Create,project.h1TextObj,"projectH1")
+        createP(projectDivContentHolder.cloneDivCreate,pCreate,project.pTextObj,"projectP");
 
         let deleteDiv = createDivSection(projectDiv.cloneDivCreate,divCreate,"deleteDiv");
         let deleteButton = createButton(deleteDiv.cloneDivCreate,buttonCreate,"Delete","deleteProjectButton");
