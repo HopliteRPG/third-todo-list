@@ -64,9 +64,12 @@ function clearProjectDivHolder(){
         let deleteDiv = createDivSection(projectDiv.cloneDivCreate,divCreate,"deleteDiv");
         let deleteButton = createButton(deleteDiv.cloneDivCreate,buttonCreate,"Delete","deleteProjectButton");
 
+
         const projectId = project.projectId;
 
-
+      projectDivContentHolder.cloneDivCreate.addEventListener("click", ()=>{
+        console.log(project.todoArray)
+      })
 
         deleteButton.cloneButtonCreate.addEventListener("click", ()=>{
 
