@@ -22,3 +22,12 @@
 .projectH1,.projectP{
     margin: 0;
 }
+
+/* todo html styling */
+.todoDiv{
+    border: black 1px solid;
+    cursor: pointer;
+    display: flex;
+    column-gap: 10px;
+    
+}
