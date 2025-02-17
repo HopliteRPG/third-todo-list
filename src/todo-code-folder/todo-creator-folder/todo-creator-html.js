@@ -6,6 +6,7 @@ const pCreate = document.createElement("p");
 const buttonCreate = document.createElement("button");
 const buttonContentTodoDiv = document.querySelector(".buttonContentTodoDiv");
 const contentTodoDiv = document.querySelector(".contentTodoDiv");
+const checkboxCreate = document.createElement("input");
 
 function createDivSection(parentDiv,div,className){
     let cloneDivCreate = div.cloneNode(true);
@@ -41,6 +42,13 @@ function createDivSection(parentDiv,div,className){
   
   }
 
+  function createCheckbox(div,checkboxCreate,checkboxClass){
+    let cloneCheckboxCreate = checkboxCreate.cloneNode(true);
+    cloneCheckboxCreate.setAttribute("type", "checkbox");
+    div.appendChild(cloneCheckboxCreate);
+    cloneCheckboxCreate.classList.add(checkboxClass)
+  } 
+
   function clearContentTodoDiv(){
     buttonContentTodoDiv.innerText = "";
     contentTodoDiv.innerText = "";
@@ -51,6 +59,7 @@ function createDivSection(parentDiv,div,className){
     createButton(buttonContentTodoDiv,buttonCreate,"Add Todo","addTodoButton");
     todoArray.forEach(todo => {
         let todoDiv = createDivSection(contentTodoDiv,divCreate,"todoDiv");
+        let todoCheckbox = createCheckbox(todoDiv.cloneDivCreate,checkboxCreate,"todoCheckbox");
         createP(todoDiv.cloneDivCreate,pCreate,todo.todoDescription,"todoDescription");
         let deleteButton = createButton(todoDiv.cloneDivCreate,buttonCreate,"Delete","deleteTodoButton");
 
