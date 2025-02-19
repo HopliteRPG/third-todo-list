@@ -1,8 +1,7 @@
-import { todoSubmitFunc } from "../todo-submit";
 export {todoFormLogic}
+import { createAndAppendTodo } from "../todo-creator-folder/todo-creator";
 
-
-function todoFormLogic(){
+function todoFormLogic(project){
    //Dialong and Modal Code
    const dialog = document.querySelector(".todoDialog");
    const showBtn = document.querySelector(".addTodoButton");
@@ -21,8 +20,9 @@ function todoFormLogic(){
      const pText = formData.get("todo_p")
 
      if(pText){
-
+      createAndAppendTodo(pText,project)
      }
+     
      
      form.reset();
      dialog.close();
