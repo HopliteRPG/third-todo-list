@@ -21,23 +21,21 @@ function findIndex(array,pId){
     }
 
     //appends the todo Id and updates the todoIdCounter for the selected project
-    function appendTodoIdAndUpdateTodoIdCounter(array,projectId,todo){
-        let projectIndex = findIndex(array,projectId)
-        todo.todoId = array[projectIndex].todoIdCounter;
-        array[projectIndex].todoIdCounter++
+    function appendTodoIdAndUpdateTodoIdCounter(todo,project){
+        todo.todoId = project.todoIdCounter
+        project.todoIdCounter++
     }
 
     //Appending Todo To Array
-    function appendTodoToArray(array,projectId,todo){
-        let projectIndex = findIndex(array,projectId)
-        array[projectIndex].todoArray.push(todo)
+    function appendTodoToArray(todo,project){
+        project.todoArray.push(todo)
     }
 
     // Wrapper function that both creates and appends the todo to the selected projects todoArray
-    function createAndAppendTodo(description,array,projectId){
+    function createAndAppendTodo(description,project){
         let tempTodo = createTodo(description);
-        appendTodoIdAndUpdateTodoIdCounter(array,projectId,tempTodo);
-        appendTodoToArray(array,projectId,tempTodo);
+        appendTodoIdAndUpdateTodoIdCounter(tempTodo,project);
+        appendTodoToArray(tempTodo,project);
     }
 
 //Deleting Todo

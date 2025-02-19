@@ -12,11 +12,11 @@ createAndAppendProject("testH1","testp1",projectDisplayArray);
 createAndAppendProject("testH2","testp2",projectDisplayArray);
 
 //Adding todos to project 0
-createAndAppendTodo("project 0 todo 1",projectDisplayArray,0)
-createAndAppendTodo("project 0 todo 2",projectDisplayArray,0)
+createAndAppendTodo("project 0 todo 1",projectDisplayArray[0])
+createAndAppendTodo("project 0 todo 2",projectDisplayArray[0])
 
 //Adding todos to project 1
-createAndAppendTodo("project 1 todo 1",projectDisplayArray,1)
+createAndAppendTodo("project 1 todo 1",projectDisplayArray[1])
 
 //Deleting project 1
 // deleteProject(projectDisplayArray,1)
