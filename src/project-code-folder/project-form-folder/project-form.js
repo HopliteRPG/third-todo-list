@@ -24,10 +24,8 @@ function projectFormLogic(){
       const h1Text = formData.get("project_h1");
       const pText = formData.get("project_p");
   
-      if(h1Text && pText){
         createAndAppendProject(formData.get("project_h1"),formData.get("project_p"),projectDisplayArray)
         renderProjectsInArray(projectDisplayArray)
-      }
 
       form.reset();
       dialog.close();

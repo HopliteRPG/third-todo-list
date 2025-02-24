@@ -19,9 +19,7 @@ function todoFormLogic(project){
      const formData = new FormData(form);
      const pText = formData.get("todo_p")
 
-     if(pText){
       createAndAppendTodo(pText,project)
-     }
      
      
      form.reset();
