@@ -69,8 +69,10 @@ function clearProjectDivHolder(){
         const projectId = project.projectId;
 
       projectDivContentHolder.cloneDivCreate.addEventListener("click", ()=>{
+        //The pressed project is displaying its todoArray 
+        //So why doesnt putting the project thats passed to renderTodosInArray add the todo to the correct project 
         renderTodosInArray(project)
-        // console.log(project.todoArray)
+        console.log(project.todoArray)
       })
 
         deleteButton.cloneButtonCreate.addEventListener("click", ()=>{
