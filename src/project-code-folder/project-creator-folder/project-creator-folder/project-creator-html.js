@@ -1,7 +1,6 @@
 import { projectDisplayArray } from "../../..";
 import { deleteProject } from "./project-creator";
 import { projectFormLogic } from "../../project-form-folder/project-form";
-import { renderTodosInArray } from "../../../todo-code-folder/todo-creator-folder/todo-creator-html";
 
 export{renderProjectsInArray}
   //Declaring HTML Variables
@@ -69,10 +68,8 @@ function clearProjectDivHolder(){
         const projectId = project.projectId;
 
       projectDivContentHolder.cloneDivCreate.addEventListener("click", ()=>{
-        //The pressed project is displaying its todoArray 
-        //So why doesnt putting the project thats passed to renderTodosInArray add the todo to the correct project 
-        renderTodosInArray(project)
-        console.log(project.todoArray)
+
+        console.log(project)
       })
 
         deleteButton.cloneButtonCreate.addEventListener("click", ()=>{
