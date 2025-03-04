@@ -3,6 +3,7 @@ import { createAndAppendProject } from "./project-code-folder/project-creator-fo
 import { createAndAppendTodo } from "./todo-code-folder/todo-creator-folder/todo-creator";
 import { renderProjectsInArray } from "./project-code-folder/project-creator-folder/project-creator-folder/project-creator-html";
 import { renderTodosInArray } from "./todo-code-folder/todo-creator-folder/todo-creator-html";
+import { projectFormSubmitLogic } from "./project-code-folder/project-form-folder/project-form";
 
 export {projectDisplayArray};
 let projectDisplayArray = [];
@@ -14,3 +15,5 @@ createAndAppendProject("testH2","testp2",projectDisplayArray);
 
 
 renderProjectsInArray(projectDisplayArray)
+
+projectFormSubmitLogic()
