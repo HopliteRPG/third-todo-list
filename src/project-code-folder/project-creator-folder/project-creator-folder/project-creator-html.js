@@ -1,6 +1,7 @@
 import { projectDisplayArray } from "../../..";
 import { deleteProject } from "./project-creator";
 import { projectFormButtonLogic, projectFormSubmitLogic } from "../../project-form-folder/project-form";
+import { renderTodosInArray } from "../../../todo-code-folder/todo-creator-folder/todo-creator-html";
 
 export{renderProjectsInArray}
   //Declaring HTML Variables
@@ -68,7 +69,7 @@ function clearProjectDivHolder(){
         const projectId = project.projectId;
 
       projectDivContentHolder.cloneDivCreate.addEventListener("click", ()=>{
-
+        renderTodosInArray(project)
         console.log(project)
       })
 
