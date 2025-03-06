@@ -1,7 +1,8 @@
-export {todoFormLogic}
+export {todoFormButtonLogic,todoFormSubmitLogic}
 import { createAndAppendTodo } from "../todo-creator-folder/todo-creator";
+import { renderTodosInArray } from "../todo-creator-folder/todo-creator-html";
 
-function todoFormLogic(project){
+function todoFormButtonLogic(){
    //Dialong and Modal Code
    const dialog = document.querySelector(".todoDialog");
    const showBtn = document.querySelector(".addTodoButton");
@@ -12,25 +13,36 @@ function todoFormLogic(project){
      dialog.showModal();
    });
   
-  
-  
-   form.addEventListener("submit",(event) => {
-     event.preventDefault();
-     const formData = new FormData(form);
-     const pText = formData.get("todo_p")
-
-      createAndAppendTodo(pText,project)
-     
-     
-     form.reset();
-     dialog.close();
-
-
-   });
-  
-  
    closeBtn.addEventListener("click", (event) => {
      event.preventDefault();
      dialog.close();
    });
    }
+
+   function todoFormSubmitLogic(project){
+    //Dialong and Modal Code
+    const dialog = document.querySelector(".todoDialog");
+    const showBtn = document.querySelector(".addTodoButton");
+    const closeBtn = document.querySelector(".todo-close-btn");
+    const form = document.querySelector(".todoForm");
+   
+   
+   function eventTodoFunction(event){
+    event.preventDefault();
+    const formData = new FormData(form);
+    const pText = formData.get("todo_p")
+
+     createAndAppendTodo(pText,project)
+     
+    renderTodosInArray(project)
+     form.removeEventListener("submit",eventTodoFunction)
+    
+    
+    form.reset();
+    dialog.close();
+   }
+   
+    form.addEventListener("submit",eventTodoFunction);
+   
+  
+    }

@@ -1,4 +1,4 @@
-import { todoFormLogic } from "../todo-form-folder/todo-form";
+import { todoFormButtonLogic, todoFormSubmitLogic } from "../todo-form-folder/todo-form";
 
 export{renderTodosInArray}
 
@@ -67,7 +67,8 @@ function createDivSection(parentDiv,div,className){
         
 
     });
-
-    todoFormLogic(project)
+    
+    todoFormButtonLogic()
+    todoFormSubmitLogic(project)
     console.log(project)
   }
