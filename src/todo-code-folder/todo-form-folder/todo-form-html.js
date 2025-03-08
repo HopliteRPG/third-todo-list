@@ -1,5 +1,5 @@
 const dialogCreate = document.createElement("dialog");
-const formCreate = document.createElement("dialog");
+const formCreate = document.createElement("form");
 const divCreate = document.createElement("div");
 const h1Create = document.createElement("h1");
 const pCreate = document.createElement("p");
