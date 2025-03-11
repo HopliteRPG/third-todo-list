@@ -1,4 +1,5 @@
 import { projectDisplayArray } from "../..";
+import { renderTodosInArray } from "../../todo-code-folder/todo-creator-folder/todo-creator-html";
 import { createAndAppendProject } from "../project-creator-folder/project-creator-folder/project-creator";
 import { renderProjectsInArray } from "../project-creator-folder/project-creator-folder/project-creator-html";
 
@@ -41,6 +42,7 @@ function projectFormButtonLogic(){
     
           createAndAppendProject(formData.get("project_h1"),formData.get("project_p"),projectDisplayArray)
           renderProjectsInArray(projectDisplayArray)
+          renderTodosInArray(projectDisplayArray[projectDisplayArray.length-1])
   
         form.reset();
         dialog.close();
