@@ -9,6 +9,8 @@ const inputCreate = document.createElement("input");
 
 const todoDialogHolder = document.querySelector(".todoDialogHolder")
 
+export {createTodoForm}
+
 
 //Creating Html
 function createDialog(parentDiv,dialog,className){
@@ -76,15 +78,18 @@ function createDivSection(parentDiv,div,className){
 
 
 function createTodoForm(){
+  console.log(todoDialogHolder)
 let todoDialog = createDialog(todoDialogHolder,dialogCreate,"todoDialog");
-let todoForm = createForm(todoDialog,form,"todoForm");
-let formDiv = createDivSection(todoForm,divCreate,"form-div");
-let formTodoPDiv = createDivSection(formDiv,createDivSection,"form-todo-p-div")
-let todoPLabel = createLabel(formTodoPDiv,labelCreate,"todo_p");
-let todoPInput = createInput(formTodoPDiv,inputCreate,todo_p,"text",15,true);
+console.log(todoDialog)
 
-let todoSubmitButton = createButton(formDiv,buttonCreate,"Submit","todo-submit-btn");
-todoSubmitButton.setAttribute("type","submit");
+let todoForm = createForm(todoDialog.cloneDialogCreate,formCreate,"todoForm");
+let formDiv = createDivSection(todoForm.cloneFormCreate,divCreate,"form-div");
+let formTodoPDiv = createDivSection(formDiv.cloneDivCreate,divCreate,"form-todo-p-div")
+let todoPLabel = createLabel(formTodoPDiv.cloneDivCreate,labelCreate,"todo_p");
+let todoPInput = createInput(formTodoPDiv.cloneDivCreate,inputCreate,"todo_p","text",15,true);
 
-let todoCloseButton = createButton(formDiv,buttonCreate,"Close","todo-close-btn")
+let todoSubmitButton = createButton(formDiv.cloneDivCreate,buttonCreate,"Submit","todo-submit-btn");
+// todoSubmitButton.cloneButtonCreate.setAttribute("type","submit");
+
+let todoCloseButton = createButton(formDiv.cloneDivCreate,buttonCreate,"Close","todo-close-btn")
 }

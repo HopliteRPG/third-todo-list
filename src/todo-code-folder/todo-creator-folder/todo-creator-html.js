@@ -1,4 +1,5 @@
-import { todoFormButtonLogic, todoFormSubmitLogic } from "../todo-form-folder/todo-form";
+import { todoFormSubmitLogic } from "../todo-form-folder/todo-form";
+import { createTodoForm } from "../todo-form-folder/todo-form-html";
 
 export{renderTodosInArray}
 
@@ -9,6 +10,8 @@ const buttonCreate = document.createElement("button");
 const buttonContentTodoDiv = document.querySelector(".buttonContentTodoDiv");
 const contentTodoDiv = document.querySelector(".contentTodoDiv");
 const checkboxCreate = document.createElement("input");
+
+const todoDialogHolder = document.querySelector(".todoDialogHolder")
 
 function createDivSection(parentDiv,div,className){
     let cloneDivCreate = div.cloneNode(true);
@@ -54,10 +57,12 @@ function createDivSection(parentDiv,div,className){
   function clearContentTodoDiv(){
     buttonContentTodoDiv.innerText = "";
     contentTodoDiv.innerText = "";
+    todoDialogHolder.innerText = "";
   }
 
   const renderTodosInArray = (project) =>{
     clearContentTodoDiv();
+    createTodoForm();
     createButton(buttonContentTodoDiv,buttonCreate,"Add Todo","addTodoButton");
     project.todoArray.forEach(todo => {
         let todoDiv = createDivSection(contentTodoDiv,divCreate,"todoDiv");
@@ -67,8 +72,7 @@ function createDivSection(parentDiv,div,className){
         
 
     });
-    
-    todoFormButtonLogic()
+
     todoFormSubmitLogic(project)
     console.log(project)
   }

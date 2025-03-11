@@ -9,14 +9,7 @@ function todoFormButtonLogic(){
    const closeBtn = document.querySelector(".todo-close-btn");
    const form = document.querySelector(".todoForm");
   
-   showBtn.addEventListener("click", () => {
-     dialog.showModal();
-   });
   
-   closeBtn.addEventListener("click", (event) => {
-     event.preventDefault();
-     dialog.close();
-   });
    }
 
    function todoFormSubmitLogic(project){
@@ -27,6 +20,16 @@ function todoFormButtonLogic(){
     const form = document.querySelector(".todoForm");
    
    
+    showBtn.addEventListener("click", () => {
+      dialog.showModal();
+    });
+   
+    closeBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      dialog.close();
+    });
+  
+
    function eventTodoFunction(event){
     event.preventDefault();
     const formData = new FormData(form);
@@ -42,7 +45,9 @@ function todoFormButtonLogic(){
     dialog.close();
    }
    
+
     form.addEventListener("submit",eventTodoFunction);
-   
+
+
   
     }
