@@ -57,6 +57,7 @@ function clearProjectDivHolder(){
     createButton(buttonContentProjectDiv,buttonCreate,"Add Project","addProjectButton");
     projectFormButtonLogic();
     array.forEach(project => {
+        project.currentProjectSelected = false;
         let projectDiv = createDivSection(contentProjectDiv,divCreate,"projectDiv");
         let projectDivContentHolder = createDivSection(projectDiv.cloneDivCreate,divCreate,"projectDivContentHolder")
         createH1(projectDivContentHolder.cloneDivCreate,h1Create,project.h1TextObj,"projectH1")
@@ -69,6 +70,7 @@ function clearProjectDivHolder(){
         const projectId = project.projectId;
 
       projectDivContentHolder.cloneDivCreate.addEventListener("click", ()=>{
+        // project.currentProjectSelected = true;
         renderTodosInArray(project)
         console.log(project)
       })
@@ -79,8 +81,32 @@ function clearProjectDivHolder(){
             return  project.projectId == projectId;
           }
 
-          deleteProject(projectDisplayArray,projectDisplayArray.findIndex(getUniqueId))
-          renderProjectsInArray(projectDisplayArray)
+          if(project.currentProjectSelected === false){
+            deleteProject(projectDisplayArray,projectDisplayArray.findIndex(getUniqueId))
+            renderProjectsInArray(projectDisplayArray)
+          }
+          else if(project.currentProjectSelected === true){
+            if(projectDisplayArray.length === 1){
+              deleteProject(projectDisplayArray,projectDisplayArray.findIndex(getUniqueId))
+              renderProjectsInArray(projectDisplayArray)
+            }
+            else if(projectDisplayArray.findIndex(getUniqueId) === 0){
+              deleteProject(projectDisplayArray,projectDisplayArray.findIndex(getUniqueId))
+              renderProjectsInArray(projectDisplayArray)
+              renderTodosInArray(projectDisplayArray[0])
+            }
+            else{
+              let theCurrentId = projectDisplayArray.findIndex(getUniqueId)
+              deleteProject(projectDisplayArray,projectDisplayArray.findIndex(getUniqueId))
+              renderProjectsInArray(projectDisplayArray)
+              renderTodosInArray(projectDisplayArray[theCurrentId-1])
+
+            }
+          }
+
+
+
+
         });
     });
   }

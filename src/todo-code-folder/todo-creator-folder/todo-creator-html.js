@@ -72,7 +72,7 @@ function createDivSection(parentDiv,div,className){
         
 
     });
-
+    project.currentProjectSelected = true;
     todoFormSubmitLogic(project)
     console.log(project)
   }

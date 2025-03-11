@@ -21,8 +21,9 @@ function findIndex(array,pId){
         let projectId = undefined;
         let todoIdCounter = 0
         let todoArray = [];
+        let currentProjectSelected = false;
     
-        return{h1TextObj,pTextObj,projectId,todoIdCounter,todoArray}
+        return{h1TextObj,pTextObj,projectId,todoIdCounter,todoArray,currentProjectSelected}
     }
 
     //sets the projects Id and updates the projectIdCount 

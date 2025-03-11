@@ -43,6 +43,7 @@ function projectFormButtonLogic(){
           createAndAppendProject(formData.get("project_h1"),formData.get("project_p"),projectDisplayArray)
           renderProjectsInArray(projectDisplayArray)
           renderTodosInArray(projectDisplayArray[projectDisplayArray.length-1])
+          // projectDisplayArray[projectDisplayArray.length-1].currentProjectSelected = true;
   
         form.reset();
         dialog.close();
