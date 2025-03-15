@@ -27,10 +27,12 @@ function createForm(parentDiv,form,className){
     return{cloneFormCreate}
 }
 
-function createLabel(parentDiv,label,id){
+function createLabel(parentDiv,label,id,labelText){
     let cloneLabelCreate = label.cloneNode(true);
     cloneLabelCreate.setAttribute("id",id);
     parentDiv.appendChild(cloneLabelCreate);
+    cloneLabelCreate.innerText = labelText;
+    
     return{cloneLabelCreate}
 }
 
@@ -85,7 +87,7 @@ console.log(todoDialog)
 let todoForm = createForm(todoDialog.cloneDialogCreate,formCreate,"todoForm");
 let formDiv = createDivSection(todoForm.cloneFormCreate,divCreate,"form-div");
 let formTodoPDiv = createDivSection(formDiv.cloneDivCreate,divCreate,"form-todo-p-div")
-let todoPLabel = createLabel(formTodoPDiv.cloneDivCreate,labelCreate,"todo_p");
+let todoPLabel = createLabel(formTodoPDiv.cloneDivCreate,labelCreate,"todo_p","Enter a Todo ");
 let todoPInput = createInput(formTodoPDiv.cloneDivCreate,inputCreate,"todo_p","text",15,true);
 
 let todoSubmitButton = createButton(formDiv.cloneDivCreate,buttonCreate,"Submit","todo-submit-btn");
