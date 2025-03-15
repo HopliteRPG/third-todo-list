@@ -52,6 +52,7 @@ function createDivSection(parentDiv,div,className){
     cloneCheckboxCreate.setAttribute("type", "checkbox");
     div.appendChild(cloneCheckboxCreate);
     cloneCheckboxCreate.classList.add(checkboxClass)
+    return{cloneCheckboxCreate}
   } 
 
   function clearContentTodoDiv(){
@@ -66,10 +67,39 @@ function createDivSection(parentDiv,div,className){
     createButton(buttonContentTodoDiv,buttonCreate,"Add Todo","addTodoButton");
     project.todoArray.forEach(todo => {
         let todoDiv = createDivSection(contentTodoDiv,divCreate,"todoDiv");
-        let todoCheckbox = createCheckbox(todoDiv.cloneDivCreate,checkboxCreate,"todoCheckbox");
+
+          if(todo.checkedStatus === true){
+             let todoCheckbox = createCheckbox(todoDiv.cloneDivCreate,checkboxCreate,"todoCheckbox");
+             todoCheckbox.cloneCheckboxCreate.checked = true
+
+             todoCheckbox.cloneCheckboxCreate.addEventListener("click",()=>{
+              if(todo.checkedStatus === true){
+                todo.checkedStatus = false;
+              }
+              else if(todo.checkedStatus === false){
+                todo.checkedStatus = true;
+              }
+           })
+          }
+          else if(todo.checkedStatus === false){
+            let todoCheckbox = createCheckbox(todoDiv.cloneDivCreate,checkboxCreate,"todoCheckbox");
+            todoCheckbox.cloneCheckboxCreate.checked = false
+
+            todoCheckbox.cloneCheckboxCreate.addEventListener("click",()=>{
+              if(todo.checkedStatus === true){
+                todo.checkedStatus = false;
+              }
+              else if(todo.checkedStatus === false){
+                todo.checkedStatus = true;
+              }
+           })
+          }
+
+
+
         createP(todoDiv.cloneDivCreate,pCreate,todo.todoDescription,"todoDescription");
         let deleteButton = createButton(todoDiv.cloneDivCreate,buttonCreate,"Delete","deleteTodoButton");
-        
+
 
     });
     project.currentProjectSelected = true;
