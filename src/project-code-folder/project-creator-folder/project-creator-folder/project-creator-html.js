@@ -1,7 +1,7 @@
 import { projectDisplayArray } from "../../..";
 import { deleteProject } from "./project-creator";
 import { projectFormButtonLogic, projectFormSubmitLogic } from "../../project-form-folder/project-form";
-import { renderTodosInArray } from "../../../todo-code-folder/todo-creator-folder/todo-creator-html";
+import { clearContentTodoDiv, renderTodosInArray } from "../../../todo-code-folder/todo-creator-folder/todo-creator-html";
 
 export{renderProjectsInArray}
   //Declaring HTML Variables
@@ -70,7 +70,7 @@ function clearProjectDivHolder(){
         const projectId = project.projectId;
 
       projectDivContentHolder.cloneDivCreate.addEventListener("click", ()=>{
-        // project.currentProjectSelected = true;
+        project.currentProjectSelected = true;
         renderTodosInArray(project)
         console.log(project)
       })
@@ -81,14 +81,26 @@ function clearProjectDivHolder(){
             return  project.projectId == projectId;
           }
 
+          function getLastProjectOn(project){
+            return  project.currentProjectSelected == true;
+          }
+
           if(project.currentProjectSelected === false){
             deleteProject(projectDisplayArray,projectDisplayArray.findIndex(getUniqueId))
+            let lastIdTest = projectDisplayArray.findIndex(getLastProjectOn)
             renderProjectsInArray(projectDisplayArray)
+            renderTodosInArray(projectDisplayArray[lastIdTest]);
+
+
+
           }
           else if(project.currentProjectSelected === true){
             if(projectDisplayArray.length === 1){
               deleteProject(projectDisplayArray,projectDisplayArray.findIndex(getUniqueId))
               renderProjectsInArray(projectDisplayArray)
+              alert("only one")
+              clearContentTodoDiv()
+              
             }
             else if(projectDisplayArray.findIndex(getUniqueId) === 0){
               deleteProject(projectDisplayArray,projectDisplayArray.findIndex(getUniqueId))

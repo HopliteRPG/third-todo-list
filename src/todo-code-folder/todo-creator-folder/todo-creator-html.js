@@ -1,7 +1,7 @@
 import { todoFormSubmitLogic } from "../todo-form-folder/todo-form";
 import { createTodoForm } from "../todo-form-folder/todo-form-html";
 
-export{renderTodosInArray}
+export{renderTodosInArray,clearContentTodoDiv}
 
 const divCreate = document.createElement("div");
 const h1Create = document.createElement("h1");

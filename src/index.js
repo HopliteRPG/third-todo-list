@@ -20,6 +20,7 @@ createAndAppendTodo("project1Todo1",projectDisplayArray[1])
 
 renderProjectsInArray(projectDisplayArray)
 renderTodosInArray(projectDisplayArray[0])
+// projectDisplayArray[0].currentProjectSelected = true;
 
 projectFormSubmitLogic()
 
