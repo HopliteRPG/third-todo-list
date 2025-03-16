@@ -1,5 +1,7 @@
+import { projectDisplayArray } from "../..";
 import { todoFormSubmitLogic } from "../todo-form-folder/todo-form";
 import { createTodoForm } from "../todo-form-folder/todo-form-html";
+import { deleteTodo } from "./todo-creator";
 
 export{renderTodosInArray,clearContentTodoDiv}
 
@@ -99,6 +101,10 @@ function createDivSection(parentDiv,div,className){
 
         createP(todoDiv.cloneDivCreate,pCreate,todo.todoDescription,"todoDescription");
         let deleteButton = createButton(todoDiv.cloneDivCreate,buttonCreate,"Delete","deleteTodoButton");
+        deleteButton.cloneButtonCreate.addEventListener("click",()=>{
+          deleteTodo(projectDisplayArray,project.projectId,todo.todoId);
+          renderTodosInArray(project)
+        });
 
 
     });
