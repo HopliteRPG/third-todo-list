@@ -98,7 +98,6 @@ function clearProjectDivHolder(){
             if(projectDisplayArray.length === 1){
               deleteProject(projectDisplayArray,projectDisplayArray.findIndex(getUniqueId))
               renderProjectsInArray(projectDisplayArray)
-              alert("only one")
               clearContentTodoDiv()
               
             }
