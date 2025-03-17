@@ -13,11 +13,12 @@ function findIndex(array,pId){
 //Todo Creation
 
     //Creating Todo
-    function createTodo(description){
+    function createTodo(description,date){
         let todoId = undefined;
         let todoDescription = description; 
         let checkedStatus = false;
-        return {todoId,todoDescription,checkedStatus}
+        let todoDate = date;
+        return {todoId,todoDescription,checkedStatus,todoDate}
     }
 
     //appends the todo Id and updates the todoIdCounter for the selected project
@@ -32,8 +33,8 @@ function findIndex(array,pId){
     }
 
     // Wrapper function that both creates and appends the todo to the selected projects todoArray
-    function createAndAppendTodo(description,project){
-        let tempTodo = createTodo(description);
+    function createAndAppendTodo(description,project,date){
+        let tempTodo = createTodo(description,date);
         appendTodoIdAndUpdateTodoIdCounter(tempTodo,project);
         appendTodoToArray(tempTodo,project);
     }
