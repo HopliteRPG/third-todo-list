@@ -33,9 +33,10 @@ function todoFormButtonLogic(){
    function eventTodoFunction(event){
     event.preventDefault();
     const formData = new FormData(form);
-    const pText = formData.get("todo_p")
+    const pText = formData.get("todo_p");
+    const pDate = formData.get("todo_date_p")
 
-     createAndAppendTodo(pText,project)
+     createAndAppendTodo(pText,project,pDate)
      
     renderTodosInArray(project)
      form.removeEventListener("submit",eventTodoFunction)
