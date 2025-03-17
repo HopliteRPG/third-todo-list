@@ -92,7 +92,7 @@ let todoPInput = createInput(formTodoPDiv.cloneDivCreate,inputCreate,"todo_p","t
 
 let formTodoDateDiv = createDivSection(formDiv.cloneDivCreate,divCreate,"form-todo-date-div")
 let todoDateLabel = createLabel(formTodoDateDiv.cloneDivCreate,labelCreate,"todo_date_p","Enter a Due Date ");
-let todoDateInput = createInput(formTodoDateDiv.cloneDivCreate,inputCreate,"todo_date_p","text",15,true);
+let todoDateInput = createInput(formTodoDateDiv.cloneDivCreate,inputCreate,"todo_date_p","date",15,true);
 
 
 let todoSubmitButton = createButton(formDiv.cloneDivCreate,buttonCreate,"Submit","todo-submit-btn");
