@@ -100,7 +100,7 @@ function createDivSection(parentDiv,div,className){
 
 
         createP(todoDiv.cloneDivCreate,pCreate,todo.todoDescription,"todoDescription");
-        createP(todoDiv.cloneDivCreate,pCreate,todo.todoDate,"todoDate")
+        createP(todoDiv.cloneDivCreate,pCreate,`Due Date: ${todo.todoDate}`,"todoDate")
         let deleteButton = createButton(todoDiv.cloneDivCreate,buttonCreate,"Delete","deleteTodoButton");
         deleteButton.cloneButtonCreate.addEventListener("click",()=>{
           deleteTodo(projectDisplayArray,project.projectId,todo.todoId);
