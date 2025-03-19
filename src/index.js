@@ -13,10 +13,10 @@ let projectDisplayArray = [];
 createAndAppendProject("testH1","testp1",projectDisplayArray);
 createAndAppendProject("testH2","testp2",projectDisplayArray);
 
-createAndAppendTodo("project0Todo1",projectDisplayArray[0])
-createAndAppendTodo("project0Todo2",projectDisplayArray[0])
+createAndAppendTodo("project0Todo1",projectDisplayArray[0],new Date())
+createAndAppendTodo("project0Todo2",projectDisplayArray[0],new Date())
 
-createAndAppendTodo("project1Todo1",projectDisplayArray[1])
+createAndAppendTodo("project1Todo1",projectDisplayArray[1],new Date())
 
 renderProjectsInArray(projectDisplayArray)
 renderTodosInArray(projectDisplayArray[0])
