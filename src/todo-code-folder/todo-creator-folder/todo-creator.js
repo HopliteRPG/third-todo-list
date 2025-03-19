@@ -1,9 +1,20 @@
+
 export {createAndAppendTodo,deleteTodo}
 
 //Find the index of the projects id 
 function findIndex(array,pId){
     function getUniqueId(object) { 
         return object.projectId === pId;
+      }
+    
+    const selectedIndex = array.findIndex(getUniqueId);
+    return selectedIndex
+}
+
+//Find the index of the projects id 
+function findIndexTodo(array,todoIdTest){
+    function getUniqueId(object) { 
+        return object.todoId === todoIdTest;
       }
     
     const selectedIndex = array.findIndex(getUniqueId);
@@ -42,7 +53,7 @@ function findIndex(array,pId){
 //Deleting Todo
 function deleteTodo(projectDisplayArray,projectId,todoId){
     let projectIndex = findIndex(projectDisplayArray,projectId);
-    let todoIndex = findIndex(projectDisplayArray,todoId);
+    let todoIndex = findIndexTodo(projectDisplayArray[projectIndex].todoArray,todoId);
     projectDisplayArray[projectIndex].todoArray.splice(todoIndex,1);
     console.log(projectDisplayArray)
 }
