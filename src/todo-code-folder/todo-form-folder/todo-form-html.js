@@ -1,3 +1,4 @@
+import {format, startOfDay} from "date-fns"
 const dialogCreate = document.createElement("dialog");
 const formCreate = document.createElement("form");
 const labelCreate = document.createElement("label");
@@ -43,6 +44,7 @@ function createInput(parentDiv,input,inputName,type,maxLengthNum,reqOrNot){
     cloneInputCreate.setAttribute("maxlength",maxLengthNum);
     cloneInputCreate.setAttribute("required",reqOrNot)
     parentDiv.appendChild(cloneInputCreate);
+    return{cloneInputCreate}
 
 }
 
@@ -93,6 +95,11 @@ let todoPInput = createInput(formTodoPDiv.cloneDivCreate,inputCreate,"todo_p","t
 let formTodoDateDiv = createDivSection(formDiv.cloneDivCreate,divCreate,"form-todo-date-div")
 let todoDateLabel = createLabel(formTodoDateDiv.cloneDivCreate,labelCreate,"todo_date_p","Enter a Due Date ");
 let todoDateInput = createInput(formTodoDateDiv.cloneDivCreate,inputCreate,"todo_date_p","date",15,true);
+let currentDate = new Date()
+console.log(currentDate)
+let formattedDate = format(currentDate,'yyyy-MM-dd')
+console.log(formattedDate)
+todoDateInput.cloneInputCreate.setAttribute("min",formattedDate)
 
 
 let todoSubmitButton = createButton(formDiv.cloneDivCreate,buttonCreate,"Submit","todo-submit-btn");
