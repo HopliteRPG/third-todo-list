@@ -45,7 +45,9 @@ function findIndexTodo(array,todoIdTest){
 
     // Wrapper function that both creates and appends the todo to the selected projects todoArray
     function createAndAppendTodo(description,project,date){
-        let tempTodo = createTodo(description,format(date,"MM/dd/yyyy"));
+        
+        let dateWithPar = date.toString().split("-").join("/")
+        let tempTodo = createTodo(description,format(dateWithPar,"MM/dd/yyyy"));
         appendTodoIdAndUpdateTodoIdCounter(tempTodo,project);
         appendTodoToArray(tempTodo,project);
     }
