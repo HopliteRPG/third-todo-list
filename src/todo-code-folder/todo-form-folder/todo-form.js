@@ -1,4 +1,6 @@
 export {todoFormButtonLogic,todoFormSubmitLogic}
+import { projectDisplayArray } from "../..";
+import { uploadArrToLocStor } from "../../local-storage-folder/local-storage";
 import { createAndAppendTodo } from "../todo-creator-folder/todo-creator";
 import { renderTodosInArray } from "../todo-creator-folder/todo-creator-html";
 
@@ -48,6 +50,7 @@ function todoFormButtonLogic(){
    
 
     form.addEventListener("submit",eventTodoFunction);
+    uploadArrToLocStor(projectDisplayArray)
 
 
   

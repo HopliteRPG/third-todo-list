@@ -109,7 +109,11 @@ function createDivSection(parentDiv,div,className){
 
 
     });
+    projectDisplayArray.forEach(project => {
+    project.currentProjectSelected = false;
+    });
     project.currentProjectSelected = true;
     todoFormSubmitLogic(project)
+    console.log(projectDisplayArray)
     console.log(project)
   }

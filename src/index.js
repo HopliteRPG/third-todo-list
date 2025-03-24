@@ -4,6 +4,7 @@ import { createAndAppendTodo } from "./todo-code-folder/todo-creator-folder/todo
 import { renderProjectsInArray } from "./project-code-folder/project-creator-folder/project-creator-folder/project-creator-html";
 import { renderTodosInArray } from "./todo-code-folder/todo-creator-folder/todo-creator-html";
 import { projectFormSubmitLogic } from "./project-code-folder/project-form-folder/project-form";
+import { uploadArrToLocStor } from "./local-storage-folder/local-storage";
 import { createTodoForm } from "./todo-code-folder/todo-form-folder/todo-form-html";
 
 export {projectDisplayArray};
@@ -23,4 +24,7 @@ renderTodosInArray(projectDisplayArray[0])
 // projectDisplayArray[0].currentProjectSelected = true;
 
 projectFormSubmitLogic()
+
+uploadArrToLocStor(projectDisplayArray)
+
 
