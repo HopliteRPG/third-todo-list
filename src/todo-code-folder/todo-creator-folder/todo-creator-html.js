@@ -1,4 +1,5 @@
 import { projectDisplayArray } from "../..";
+import { uploadArrToLocStor } from "../../local-storage-folder/local-storage";
 import { todoFormSubmitLogic } from "../todo-form-folder/todo-form";
 import { createTodoForm } from "../todo-form-folder/todo-form-html";
 import { deleteTodo } from "./todo-creator";
@@ -77,9 +78,12 @@ function createDivSection(parentDiv,div,className){
              todoCheckbox.cloneCheckboxCreate.addEventListener("click",()=>{
               if(todo.checkedStatus === true){
                 todo.checkedStatus = false;
+                uploadArrToLocStor(projectDisplayArray)
               }
               else if(todo.checkedStatus === false){
                 todo.checkedStatus = true;
+                uploadArrToLocStor(projectDisplayArray)
+
               }
            })
           }
@@ -90,9 +94,13 @@ function createDivSection(parentDiv,div,className){
             todoCheckbox.cloneCheckboxCreate.addEventListener("click",()=>{
               if(todo.checkedStatus === true){
                 todo.checkedStatus = false;
+                uploadArrToLocStor(projectDisplayArray)
+
               }
               else if(todo.checkedStatus === false){
                 todo.checkedStatus = true;
+                uploadArrToLocStor(projectDisplayArray)
+
               }
            })
           }
