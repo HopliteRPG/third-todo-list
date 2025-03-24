@@ -1,4 +1,5 @@
 import { projectDisplayArray } from "../../..";
+import { uploadArrToLocStor } from "../../../local-storage-folder/local-storage";
 
 export {createAndAppendProject,deleteProject}
 
@@ -49,4 +50,5 @@ function findIndex(array,pId){
     function deleteProject(projectDisplayArray,id){
         projectDisplayArray.splice(id,1);
         console.log(projectDisplayArray)
+        uploadArrToLocStor(projectDisplayArray)
     }
