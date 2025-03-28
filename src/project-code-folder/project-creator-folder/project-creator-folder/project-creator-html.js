@@ -53,10 +53,12 @@ function clearProjectDivHolder(){
 
 
   const renderProjectsInArray = (array) =>{
-    clearProjectDivHolder()
-    createButton(buttonContentProjectDiv,buttonCreate,"Add Project","addProjectButton");
-    projectFormButtonLogic();
-    array.forEach(project => {
+
+
+      clearProjectDivHolder()
+      createButton(buttonContentProjectDiv,buttonCreate,"Add Project","addProjectButton");
+      projectFormButtonLogic();
+      array.forEach(project => {
         project.currentProjectSelected = false;
         let projectDiv = createDivSection(contentProjectDiv,divCreate,"projectDiv");
         let projectDivContentHolder = createDivSection(projectDiv.cloneDivCreate,divCreate,"projectDivContentHolder")
@@ -120,4 +122,7 @@ function clearProjectDivHolder(){
 
         });
     });
-  }
+    }
+  
+    
+  
