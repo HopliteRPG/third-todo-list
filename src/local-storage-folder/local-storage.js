@@ -16,7 +16,7 @@ function uploadpProjectIdCountToLocStor(projectIdCount){
 
 
     function setArrayOnStartUp(){
-        if(localStorage.getItem("displayArr") === null || localStorage.getItem("displayArr") == "[]"){
+        if(localStorage.getItem("displayArr") === null){
             alert("empty arr")
             localStorage.setItem("displayArr","[]")
             let parsedArr = localStorage.getItem("displayArr")
