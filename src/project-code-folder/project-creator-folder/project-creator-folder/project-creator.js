@@ -1,9 +1,12 @@
 import { projectDisplayArray } from "../../..";
-import { uploadArrToLocStor } from "../../../local-storage-folder/local-storage";
+import { uploadArrToLocStor, uploadpProjectIdCountToLocStor } from "../../../local-storage-folder/local-storage";
 
 export {createAndAppendProject,deleteProject}
 
-let projectIdCount = 0;
+let testProjectIdCount = JSON.parse(localStorage.getItem("projectIdCount"))
+
+
+let projectIdCount = testProjectIdCount++;
 
 //Find the index of the projects id 
 function findIndex(array,pId){
@@ -31,6 +34,7 @@ function findIndex(array,pId){
     function setAndIncreaseProjectIdCount(project){
         project.projectId = projectIdCount;
         projectIdCount++;
+        uploadpProjectIdCountToLocStor(projectIdCount)
     }
 
     //Appends the newly created project to the array
