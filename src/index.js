@@ -26,8 +26,19 @@ setIdCounterOnStartUp()
 // projectDisplayArray[0].currentProjectSelected = true;
 
 if(projectDisplayArray.length > 0){
+    function findCurrentProjectSelected(array){
+        function getUniqueId(object) { 
+            return object.currentProjectSelected === true;
+          }
+        
+        const selectedIndex = array.findIndex(getUniqueId);
+        return selectedIndex
+    }
+
+    let currentProjectSelected = findCurrentProjectSelected(projectDisplayArray)
+    
 renderProjectsInArray(projectDisplayArray)
-renderTodosInArray(projectDisplayArray[0])
+renderTodosInArray(projectDisplayArray[currentProjectSelected])
 }
 else{
     renderProjectsInArray(projectDisplayArray)
