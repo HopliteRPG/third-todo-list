@@ -3,13 +3,11 @@ export {setArrayOnStartUp,uploadArrToLocStor,uploadpProjectIdCountToLocStor,setI
 function uploadArrToLocStor(array){
     const stringArr = JSON.stringify(array)
     localStorage.setItem("displayArr", stringArr)
-    alert("updated arr")
 }
 
 function uploadpProjectIdCountToLocStor(projectIdCount){
     const stringProjectIdCount = JSON.stringify(projectIdCount)
     localStorage.setItem("projectIdCount", stringProjectIdCount)
-    alert("updated id count")
 
 }
 
@@ -17,7 +15,6 @@ function uploadpProjectIdCountToLocStor(projectIdCount){
 
     function setArrayOnStartUp(){
         if(localStorage.getItem("displayArr") === null){
-            alert("empty arr")
             localStorage.setItem("displayArr","[]")
             let parsedArr = localStorage.getItem("displayArr")
             return JSON.parse(parsedArr)
