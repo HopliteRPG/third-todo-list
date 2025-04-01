@@ -1,2 +1,2 @@
-# restaurant-page
-I will be practicing webpacks by making a restaurant page following the guidelines of the odin project
+# todo-list
+I will be practicing local storage by making a todo-list  following the guidelines of the odin project
